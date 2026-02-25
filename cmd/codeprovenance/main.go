@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"os"
+	"time"
 
 	"github.com/hallucinaut/codeprovenance/pkg/provenance"
 	"github.com/hallucinaut/codeprovenance/pkg/verify"
@@ -73,7 +74,7 @@ Examples:
   codeprovenance track myapp
   codeprovenance verify build-001
   codeprovenance check build-info.json
-`, "codeprovenance")
+`)
 }
 
 func trackArtifact(name string) {
