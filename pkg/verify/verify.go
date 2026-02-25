@@ -4,6 +4,7 @@ package verify
 import (
 	"crypto/sha256"
 	"encoding/hex"
+	"fmt"
 	"time"
 )
 
@@ -265,7 +266,7 @@ func GenerateIntegrityReport(check *IntegrityCheck) string {
 
 	report += "=== Build Integrity Report ===\n\n"
 	report += "Valid: " + boolToString(check.Valid) + "\n"
-	report += "Score: " + string(rune(int(check.Score)+48)) + "%\n\n"
+	report += "Score: " + fmt.Sprintf("%.0f%%", check.Score) + "%\n\n"
 
 	report += "Checks:\n"
 	for _, result := range check.Checks {
